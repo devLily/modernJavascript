@@ -1,4 +1,4 @@
-// shift는 첫 번째 원소를 배열에서 추출해 줌
+// shift는 첫 번째 원소를 배열에서 추출하는 역할
 const numbers = [10, 20, 30, 40];
 
 const value = numbers.shift();
