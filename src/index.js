@@ -1,9 +1,34 @@
-//slice는 배열을 찾아 낼 때 사용하며 splice와의 차이점은 기존의 배열을 건드리지 않는다, 파라미터에 넣는 값도 다름
-const numbers = [10, 20, 30, 40];
+//filter 특정 조건을 만족하는 원소를 찾아 새로운 배열을 만드는 것
+const todos = [
+  {
+    id: 1,
+    text: "자바스크립트 입문",
+    done: true
+  },
+  {
+    id: 2,
+    text: "함수 배우기",
+    done: true
+  },
+  {
+    id: 3,
+    text: "객체와 배열 배우기",
+    done: true
+  },
+  {
+    id: 4,
+    text: "배열 내장함수 배우기",
+    done: false
+  }
+];
+// todo 배열에서 done 값이 false 인 것만 필터링 하려면
 
-const sliced = numbers.slice(0, 2);
-console.log(sliced);
-console.log(numbers);
-//start라는 파라미터는 어떤 index부터 자를지를 의미, end파라미터는 어디까지를 자를지 의미
-//0의 index는 10, 2의 index는 30이므로 10, 20을 잘라내고 sliced의 console값이 [10, 20]이 됨
-// 강조 : slice 함수는 기존의 배열을 건드리지 않는다. 반면 splice는 기존의 배열을 수정한다는 점에서 차이가 있음
+const tasksNotDone = todos.filter((todo) => todo.done === false);
+console.log(tasksNotDone);
+
+/* filter내장함수를 사용하여 tasksNotDone이라는 배열을 만들고 특정 조건을 넣어주고 이는 함수로 확인한다.
+todo라는 파라미터를 가져와서 todo.done 값이 false인 배열을 만들어 내는 것
+기존의 배열을 건드리지 않고 새로운 배열을 만들어 낸다.
+ false 값을 더 간략하게 작성하기 위해 
+const tasksNotDone = todos.filter((todo) => !todo.done);
+와 같이 작성 할 수 있다. */
